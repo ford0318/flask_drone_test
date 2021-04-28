@@ -1,0 +1,17 @@
+---
+kind: pipeline
+name: testing
+
+steps:
+- name: testing1
+  pull: always
+  image: python
+  commands:
+  - pip install -r requirements.txt
+  - python main.py
+  - echo '成功!!!'
+
+
+
+image_pull_secrets:
+- dockerconfigjson
